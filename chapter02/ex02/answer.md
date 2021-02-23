@@ -1,3 +1,5 @@
 # Answer
 
-O([tex:N\^3])
+```math
+O(N^3)
+```
