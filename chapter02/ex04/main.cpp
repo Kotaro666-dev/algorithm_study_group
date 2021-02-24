@@ -38,9 +38,11 @@ static int	binary_search(int age, int K)
 
 int			main(void)
 {
-	for (int age = 0; age < 100; age++)
+	for	(int K = 0; K < 20; K++)
 	{
-		for (int K = 0; K < 20; K++)
+		int age = 0;
+		int upto = pow(2, K);
+		while (age < upto)
 		{
 			int counter = binary_search(age, K);
 			if (counter == 0)
@@ -54,6 +56,7 @@ int			main(void)
 				printf("\x1b[39m");
 				printf("age: %d, K: %d, counter: %d\n", age, K, counter);
 			}
+			age++;
 		}
 	}
 	return (0);
