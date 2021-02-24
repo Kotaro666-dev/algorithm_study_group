@@ -14,7 +14,7 @@ O(N^2)
 
 ## 4. T(N) = N\sqrtN + 5NlogN
 
-O(NlogN)
+O(NlogN) -> O(N\sqrtN)
 
 ## 5. T(N) = 2^N + N^2019
 
