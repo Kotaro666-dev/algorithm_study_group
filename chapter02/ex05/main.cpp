@@ -3,7 +3,7 @@
 using namespace std;
 typedef long long ll;
 const int INF = 1000000000;
-const ll LINF = 1000000000000000000;//1e18
+const ll LINF = 1000000000000000000;
 const double EPS = 1e-10;
 
 static int binary_search(int age, int N)
@@ -38,9 +38,9 @@ static int binary_search(int age, int N)
 
 int			main(void)
 {
-	for (int age = 0; age < 100; age++)
+	for (int N = 1; N < 100; N++)
 	{
-		for (int N = 0; N < 100; N++)
+		for (int age = 0; age < N; age++)
 		{
 			int counter = binary_search(age, N);
 			if (counter == 0)
