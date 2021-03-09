@@ -25,6 +25,10 @@ int main(void)
 			second_min = first_min;
 			first_min = array[i];
 		}
+		else if (array[i] < second_min)
+		{
+			second_min = array[i];
+		}
 		printf("first = %d, second = %d\n", first_min, second_min);
 	}
 	printf("answer = %d\n", second_min);
