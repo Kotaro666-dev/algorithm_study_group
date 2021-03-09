@@ -16,9 +16,9 @@ int main(void)
 	{
 		cin >> array[i];
 	}
-	int first_min = array[0];
-	int second_min;
-	for (int i = 1; i < N; i++)
+	int first_min = min(array[0], array[1]);
+	int second_min = max(array[0], array[1]);
+	for (int i = 2; i < N; i++)
 	{
 		if (array[i] < first_min)
 		{
