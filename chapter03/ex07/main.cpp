@@ -10,20 +10,27 @@ int main(void)
 {
 	int N;
 	cin >> N;
+
 	string S;
 	cin >> S;
 
 	int sum = 0;
-	for (int bit = 0; bit < (1 << N); bit++)
+	for (int bit = 0; bit < (1 << N - 1); bit++)
 	{
-		for (int i = 0; i < N; i++)
+		int temp = 0;
+		for (int i = 0; i < N - 1; i++)
 		{
+			temp *= 10;
+			temp += S[i] - '0'; // CHAR -> INT
 			if (bit & (1 << i))
 			{
-				printf("%d", S[i] - '0');
+				sum += temp;
+				temp = 0;
 			}
 		}
-		printf("\n");
+		temp *= 10;
+		temp += S.back() - '0'; // get the last word of S
+		sum += temp;
 	}
 	printf("sum = %d\n", sum);
 	return (0);
