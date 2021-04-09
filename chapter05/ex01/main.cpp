@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 12:16:51 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/04/09 12:42:34 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/04/09 13:21:41 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,28 +37,11 @@ int main(void)
     vector<int>ans(N);
 
     // a[i]を固定して、順番に見ていく
-    // for loop分が O(N)、二分探索がO(log N) -> O(N long N)
+    // for loop分が O(N)、二分探索のlower_boundがO(log N) -> O(N long N)
     for (int i = 0; i < N; i++)
     {
-        int left = 0;
-        int right = a.size();
-        while (right - left > 1)
-        {
-            int mid = left + (right - left) / 2;
-            if (b[mid] == a[i])
-            {
-                ans[i] = mid;
-                break ;
-            }
-            else if (b[mid] < a[i])
-            {
-                left = mid;
-            }
-            else
-            {
-                right = mid;
-            }
-        }
+        auto itr = lower_bound(b.begin(), b.end(), a[i]);
+        ans[i] = itr - b.begin();
     }
     for (int i = 0; i < N; i++)
     {
