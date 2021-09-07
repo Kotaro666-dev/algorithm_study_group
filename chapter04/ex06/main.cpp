@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 20:52:30 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/30 21:14:52 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/31 08:45:16 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 using namespace std;
 typedef long long ll;
 const int INF = 1000000000;
-const ll LINF = 1000000000000000000;//1e18
+const ll LINF = 1000000000000000000; //1e18
 const double EPS = 1e-10;
 
 bool func(int i, int w, const vector<int> &a, vector<vector<int>> &memo)
@@ -33,9 +33,9 @@ bool func(int i, int w, const vector<int> &a, vector<vector<int>> &memo)
 	}
 
 	// memo の中身を確認
-	if (memo[i][w] != -1)
+	if (memo[i][w] != 0)
 	{
-		return (true);
+		return (memo[i][w] == 1);
 	}
 
 	// a[i - 1]を選ばない場合
@@ -65,7 +65,7 @@ int main(void)
 	int N, W;
 	cin >> N >> W;
 	vector<int> a(N);
-	vector<vector<int>> memo(N + 1, vector<int>(W + 1, -1));
+	vector<vector<int>> memo(N + 1, vector<int>(W + 1, 0));
 	for (int i = 0; i < N; i++)
 	{
 		cin >> a[i];

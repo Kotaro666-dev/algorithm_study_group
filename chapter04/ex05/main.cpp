@@ -21,6 +21,7 @@ static bool		is_num_753(int num)
 
 static void		count_753(int K, int num, int &counter)
 {
+	// ベースケース
 	if (num >= K)
 	{
 		return ;
@@ -31,16 +32,16 @@ static void		count_753(int K, int num, int &counter)
 		counter++;
 	}
 	// 3 を後ろに足すの場合
-	count_753(K, num * 10 + 3, counter);
+	count_753(K, (num * 10) + 3, counter);
 	// 5 を後ろに足すの場合
-	count_753(K, num * 10 + 5, counter);
+	count_753(K, (num * 10) + 5, counter);
 	// 7 を後ろに足すの場合
-	count_753(K, num * 10 + 7, counter);
+	count_753(K, (num * 10) + 7, counter);
 }
 
 int		main(void)
 {
-	int K = 10000;
+	int K = 5500;
 	int num = 0;
 	int counter = 0;
 	count_753(K, num, counter);
