@@ -14,6 +14,7 @@ int main(void)
 	vector<pair<ll, ll>> shops(N);
 	for (ll i = 0; i < N; i++)
 	{
+		// first == ドリンクの値段、 second == 売っている最大本数
 		cin >> shops[i].first >> shops[i].second;
 	}
 	sort(shops.begin(), shops.end());

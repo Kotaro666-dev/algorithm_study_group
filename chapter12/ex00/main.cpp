@@ -22,7 +22,6 @@ static int find_target_index_in_sorted_array(vector<int> array, int target)
 	return (NOT_FOUND);
 }
 
-
 int main(void)
 {
 	cout << "場所を求めたい数は何ですか？" << endl;
