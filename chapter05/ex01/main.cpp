@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 12:16:51 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/04/09 13:21:41 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/04/21 07:52:39 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,15 @@ int main(void)
     }
 
     // 小さい順にソート
+    // クイックソートの改良版イントロソートを使用
+    // 最初はクイックソートを行い、再帰のレベルがソートされた要素数（の対数）を超えるとヒープソートに切り替える。
+    // 計算量は、最悪の場合でも O(N log N)が保証されている
     sort(b.begin(), b.end());
 
     vector<int>ans(N);
 
     // a[i]を固定して、順番に見ていく
-    // for loop分が O(N)、二分探索のlower_boundがO(log N) -> O(N long N)
+    // for loop分が O(N)、二分探索の lower_boundがO(log N) -> O(N log N)
     for (int i = 0; i < N; i++)
     {
         auto itr = lower_bound(b.begin(), b.end(), a[i]);
@@ -45,7 +48,7 @@ int main(void)
     }
     for (int i = 0; i < N; i++)
     {
-        printf("%d ", ans[i]);
+        printf("%d = %d\n", a[i], ans[i]);
     }
     return (0);
 }
