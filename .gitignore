@@ -32,3 +32,7 @@
 .DS_Store
 .vscode
 
+.idea/algorithm_study_group.iml
+.idea/modules.xml
+.gitignore
+.idea/vcs.xml
