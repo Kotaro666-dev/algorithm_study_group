@@ -36,8 +36,9 @@ int main(void)
 		graph[a].push_back(b);
 		graph[b].push_back(a);
 	}
+
 	vector<bool> hasSeen(N, false);
-	int number_of_edge = 0;
+	int number_of_subgraphs = 0;
 	for (int vertex = 0; vertex < N; vertex++)
 	{
 		if (hasSeen[vertex])
@@ -45,9 +46,9 @@ int main(void)
 			continue;
 		}
 		dfs(graph, hasSeen, vertex);
-		number_of_edge++;
+		number_of_subgraphs++;
 	}
-	cout << number_of_edge << endl;
+	cout << number_of_subgraphs << endl;
 	return (0);
 }
 
