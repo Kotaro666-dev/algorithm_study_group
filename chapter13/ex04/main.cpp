@@ -14,6 +14,8 @@ const int NOT_VISITED = -1;
 const int dx[4] = { 1, 0, -1, 0 };
 const int dy[4] = { 0, 1, 0, -1 };
 
+// 参考書：https://qiita.com/drken/items/0c7bab0384438f285f93
+
 int main(void)
 {
 	int W, H;
